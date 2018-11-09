@@ -111,9 +111,9 @@ Method (_Q0F, 0, NotSerialized)
 
 ---------------
 
-**Release** (https://github.com/alfinauzikri/ASUS-X441UVK/releases)
+**How to install kext**
 ---------------
 
-* 11-9-2018
-  * Clover_v2.4k_r4741
-  * AsusSMC v1.0.1
+Put all kexts files on EFI/CLOVER/Kexts/Other
+
+Except : AirPortAtheros40.kext on inside IO80211Family.kext (IO80211Family.kext/Contents/Plugins) and install using Kext Utility.app
