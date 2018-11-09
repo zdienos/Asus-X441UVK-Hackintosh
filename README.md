@@ -111,17 +111,19 @@ Method (_Q0F, 0, NotSerialized)
 
 ---------------
 
-**How to install kext**
+**How to install kext and Fix internal mic problem**
 ---------------
 
 Put all kexts files on EFI/CLOVER/Kexts/Other
 
 Except : AirPortAtheros40.kext on inside IO80211Family.kext (IO80211Family.kext/Contents/Plugins) and install using Kext Utility.app
 
+- Put FixALC255v2.app to Application/Utilities folder.
+- Open System Preferences > Users & Groups > Login Items and Add FixALC255v2.app and check "hide"
+- Reboot
+
 
 **Contact Us**
 
 Facebook : fb.me/alfinauzikri
 Telegram : https://t.me/HackintoshIndonesia
-
-<center>![about0](./screenshot/about0.png)</center>
