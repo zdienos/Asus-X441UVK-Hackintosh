@@ -124,4 +124,4 @@ Except : AirPortAtheros40.kext on inside IO80211Family.kext (IO80211Family.kext/
 Facebook : fb.me/alfinauzikri
 Telegram : https://t.me/HackintoshIndonesia
 
-![about0](.screenshot/about0.png)
+![about0](./screenshot/about0.png)
