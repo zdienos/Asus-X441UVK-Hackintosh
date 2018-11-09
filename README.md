@@ -127,5 +127,5 @@ Method (_Q0F, 0, NotSerialized)
 
 **Contact Us**
 
-Facebook : fb.me/alfinauzikri
+Facebook : fb.me/alfinauzikri<br />
 Telegram : https://t.me/HackintoshIndonesia
