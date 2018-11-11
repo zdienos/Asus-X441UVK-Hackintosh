@@ -1,5 +1,7 @@
 # Asus X441UVK Hackintosh
 
+Hackintosh resources for Asus X441UVK, maybe support for Intel Core i5-7200U or i7-7500U (Kabylake)
+
 -------
 **Specification :**
 
