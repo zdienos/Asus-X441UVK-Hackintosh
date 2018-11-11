@@ -13,6 +13,7 @@ Hackintosh resources for Asus X441UVK, maybe support for Intel Core i5-7200U or 
  - Ethernet : Realtek RTL8106E
  - Trackpad : ELAN1200
  - Bootloader: Clover (UEFI)
+ - BIOS Version : X441UVK.320
  
 
 **Working :**
