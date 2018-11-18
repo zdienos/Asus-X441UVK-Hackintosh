@@ -228,7 +228,7 @@ end;
 - Open System Preferences > Users & Groups > Login Items and Add FixALC255v2.app and check "hide"
 - Reboot
 
-**UPDATE
+***UPDATE***
 
 - For ALC255 use this patch inside HDEF
 
