@@ -313,7 +313,7 @@ Name (RMCF, Package()
                     "Perform Reset on External Wake", 
                     ">n", 
                     "Send Delay", 
-                    0x0A, 
+                    0x17, 
                     "Sleep Nodes", 
                     ">n"
                 }
