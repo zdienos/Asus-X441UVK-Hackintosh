@@ -222,12 +222,103 @@ end;
 - Put edited AirPortAtheros40.kext to IO80211Family.kext (IO80211Family.kext/Contents/Plugins) and install using Kext       Utility.app (Replace vanilla AirPortAtheros40.kext).
 - Run script install_daemon.sh from AsusSMC bundle as root (to fix Sleep and Wifi On/Off Button)
 
-2. Fix internal mic
+2. Fix Audio ALC255 for Asus X441U Series (Internal mic)
 
 - Put FixALC255v2.app to Application/Utilities folder.
 - Open System Preferences > Users & Groups > Login Items and Add FixALC255v2.app and check "hide"
 - Reboot
 
+***UPDATE
+
+- For ALC255 use this patch inside HDEF
+
+```c
+    Scope (_SB.PCI0)
+    {
+        Device (HDEF)
+        {
+            //
+            //INSERT HERE
+            //
+            
+            Name (_ADR, 0x001F0003)  // _ADR: Address
+            OperationRegion (HDAR, PCI_Config, Zero, 0x0100)
+          .
+          .
+          .
+```
+
+Patch for ALC255 : 
+```c
+Name (RMCF, Package()
+    {
+                "CodecCommander", 
+                Package (0x0A)
+                {
+                    "Custom Commands", 
+                    Package (0x04)
+                    {
+                        Package (0x00){}, 
+                        Package (0x08)
+                        {
+                            "Command", 
+                            Buffer (0x04)
+                            {
+                                 0x01, 0x97, 0x07, 0x24                           // ...$
+                            }, 
+
+                            "On Init", 
+                            ">y", 
+                            "On Sleep", 
+                            ">n", 
+                            "On Wake", 
+                            ">y"
+                        }, 
+
+                        Package (0x08)
+                        {
+                            "Command", 
+                            Buffer (0x04)
+                            {
+                                 0x01, 0xA7, 0x07, 0x24                           // ...$
+                            }, 
+
+                            "On Init", 
+                            ">y", 
+                            "On Sleep", 
+                            ">n", 
+                            "On Wake", 
+                            ">y"
+                        }, 
+
+                        Package (0x08)
+                        {
+                            "Command", 
+                            Buffer (0x04)
+                            {
+                                 0x02, 0x17, 0x08, 0x83                           // ....
+                            }, 
+
+                            "On Init", 
+                            ">y", 
+                            "On Sleep", 
+                            ">n", 
+                            "On Wake", 
+                            ">y"
+                        }
+                    }, 
+
+                    "Perform Reset", 
+                    ">n", 
+                    "Perform Reset on External Wake", 
+                    ">n", 
+                    "Send Delay", 
+                    0x0A, 
+                    "Sleep Nodes", 
+                    ">n"
+                }
+            })
+```
 
 **Contact Us**
 
